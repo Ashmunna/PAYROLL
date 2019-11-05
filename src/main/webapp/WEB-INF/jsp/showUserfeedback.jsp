@@ -28,7 +28,7 @@
 
 
 <h1 class="main-title-w3layouts mb-2 text-center text-white"
-	style="padding-top: 20px">showUser</h1>
+	style="padding-top: 20px">Children Details</h1>
 <!--// main-heading -->
 <div
 	class="form-body-w3-agile  w-lg-50 w-sm-75 w-100 mx-auto mt-5 col-md-8" style="padding-left: 10px">
@@ -42,54 +42,28 @@
 	<table class="table table-hover" style="width:1600px">
 		<thead class="thead-dark text-center">
 			<tr>
-				<th>First Name</th>
-				<th>Surname</th>
-				<th>Date of Birth</th>
-				<th>Gender</th>
+				<th>Name</th>
 				<th>Email</th>
-				<th>Contact Number</th>
-				<th>Address</th>
-				<th>Department</th>
-				<th>Designation</th>
-				<th>Status</th>
-				<th>Date of Hired</th>
-				<th>Basic Salary</th>
-				<!--  <td>Username</td>
-				<td>Password</td> -->
-				
-				<th colspan="2">Action</th>
+				<th>Subject</th>
+				<th>Message</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody class="text-center">
-		<c:forEach var="user" items="${userList}">
+		<c:forEach var="contact" items="${contactList}">
 			<tr>
-				<td>${user.first_name}</td>
-				<td>${user.surname}</td>
-				<td>${user.dob}</td>
-				<td>${user.gender}</td>
-				<td>${user.email}</td>
-				<td>${user.contact_no}</td>
-				<td>${user.address}</td>
-				<td>${user.department}</td>
-				<td>${user.designation}</td>
-				<td>${user.status}</td>
-				<td>${user.doh}</td>
-				<td>${user.basic_salary}</td>
-				<!--
-				<td>${user.username}</td>
-				<td>${user.password}</td>
-				  -->
-				
+				<td>${contact.name}</td>
+				<td>${contact.email}</td>
+				<td>${contact.subject}</td>
+				<td>${contact.message}</td>
+						
 				
 				<td>
-					<a class="btn btn-success" href="/user/admin/edit/${user.id}"><i class="fa fa-edit">Edit</i></a>
+					<a class="btn btn-success" href="/email/${contact.id}"><i class="fa fa-edit">Reply</i></a>
 					
 				</td>
 				
-				<td>
-					
-					<a class="btn btn-danger float-right"  href="/user/admin/delete/${user.id}"><i class="fa fa-trash">Delete</i></a>
-				</td>
+				
 			</tr>
 		</c:forEach>
 		</tbody>

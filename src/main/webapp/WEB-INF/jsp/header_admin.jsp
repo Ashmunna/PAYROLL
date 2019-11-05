@@ -90,11 +90,9 @@
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown1"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Audit
-                                    </a>
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mailing</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                                        <a class="dropdown-item" href="elements.html">Add User</a>
+                                        <a class="dropdown-item" href="/showUserfeedback">Show User Feedback</a>
                                         <a class="dropdown-item" href="single-blog.html">Audit Trial</a>
                                     </div>
                                 </li>
