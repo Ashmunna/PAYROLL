@@ -111,8 +111,7 @@ public class LoginController {
         userInfo.setRole(role);
         userInfo.setUsername(username);
         userInfo.setPassword(passwordEncoder.encode(password));
-        userInfo.setCreatedDate(new Date());
-        userInfo.setUpdateDate(new Date());
+        userInfo.setCreatedDate(createDate);
         userInfo.setEnabled(true);
         userInfo = userInfoService.save(userInfo);
         

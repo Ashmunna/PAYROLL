@@ -28,7 +28,7 @@ public class UserInfo implements Serializable {
 	@NotNull
 	private String password;
 	private boolean enabled;
-	private Date createdDate;
+	private String createdDate;
 	private Date updateDate;
 	public long getUserId() {
 		return userId;
@@ -78,11 +78,11 @@ public class UserInfo implements Serializable {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-	public Date getCreatedDate() {
+	public String getCreatedDate() {
 		return createdDate;
 	}
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
+	public void setCreatedDate(String createDate) {
+		this.createdDate = createDate;
 	}
 	public Date getUpdateDate() {
 		return updateDate;
@@ -90,12 +90,15 @@ public class UserInfo implements Serializable {
 	public void setUpdateDate(Date updateDate) {
 		this.updateDate = updateDate;
 	}
+	
 	@Override
 	public String toString() {
 		return "UserInfo [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
 				+ ", role=" + role + ", username=" + username + ", password=" + password + ", enabled=" + enabled
 				+ ", createdDate=" + createdDate + ", updateDate=" + updateDate + "]";
 	}
+	
+	
 	
 	
 }

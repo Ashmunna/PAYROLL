@@ -56,7 +56,7 @@
 			</div>
 			
 			
-					<form action="/userRegistrationadmin" method="post">
+					<form action="/userUpdateadmin" method="post">
 						<div class="row" >
 					
 							<div class="col-lg-6" style="width: 300px; color:yellow; padding:20px">
@@ -64,19 +64,20 @@
 								<div class="form-group">
 								<label>First Name</label> <input type="text" name="fName"
 									class="form-control" placeholder="Write Employee First Name"
-									required="">
+									required="" value="${userList.first_name}">
+									<input type="hidden" name="id" class="form-control" placeholder="Write Employee First Name" required="" value="${userList.id}">
 							</div>
 							<div class="form-group">
 								<label>Surname</label> <input type="text" name="sName"
 									class="form-control" placeholder="Write Employee Surname"
-									required="">
+									required="" value="${userList.surname}">
 							</div>
 					
 							<div class="form-group">
 					
 					
 								<label>Date of Birth</label> <input type="date" class="form-control"
-									name="dob">
+									name="dob" value="${userList.dob}">
 					
 							</div>
 					
@@ -89,16 +90,16 @@
 							<div class="form-check form-check-inline">
 					
 								<label class="radio-inline"> <input type="radio"
-									name="gender" value="Male">Male
+									name="gender" value="${userList.gender}">Male
 								</label> <label class="radio-inline"><input type="radio"
-									name="gender" value="Female">Female</label>
+									name="gender" value="${userList.gender}">Female</label>
 					
 							</div>
 					
 							<div class="form-group">
 								<label>Email</label> <input type="email" name="email"
 									class="form-control" placeholder="Write Employee Employee"
-									required="">
+									required="" value="${userList.email}">
 							</div>
 					
 					
@@ -107,12 +108,12 @@
 					
 								<label>Contact Number</label> <input
 									type="text" class="form-control" 
-									placeholder="Write Employee number" name="contact_number">
+									placeholder="Write Employee number" name="contact_number" value="${userList.contact_no}">
 							</div>
 							
 							<div>
 							
-							<button type="submit" class="btn btn-success  mt-sm-5  px-4">Register</button>
+							<button type="submit" class="btn btn-success  mt-sm-5  px-4">Update</button>
 							</div>
 							
 						
@@ -130,7 +131,7 @@
 									<label >Address</label>
 									<textarea rows="3" cols="5" class="form-control"
 										 placeholder="Write Employee Address"
-										name="address">
+										name="address" >${userList.address}
 												</textarea>
 								</div>
 							
@@ -142,7 +143,7 @@
 						
 									<label >Department</label> <input
 										type="text" class="form-control" name="department"
-										placeholder="Write Employee Department" >
+										placeholder="Write Employee Department" value="${userList.department}" >
 								</div>
 					
 					
@@ -151,7 +152,7 @@
 						
 									<label>Designation</label> <input
 										type="text" class="form-control" name="designation"
-										placeholder="Write Employee Designation"
+										placeholder="Write Employee Designation" value="${userList.designation}"
 										>
 								</div>
 							
@@ -160,14 +161,14 @@
 						
 						
 									<label>Status</label> <input type="text" class="form-control" name="status"
-										placeholder="Write Employee Status" >
+										placeholder="Write Employee Status" value="${userList.status}">
 								</div>
 					
 								<div class="form-group">
 								
 								
 									<label >Date of Hired</label> <input
-										type="date" class="form-control" name="doh"
+										type="date" class="form-control" name="doh" value="${userList.doh}"
 										>
 								
 								</div>
@@ -178,7 +179,7 @@
 									<label >Basic Salary</label> <input
 										type="number" class="form-control" 
 										placeholder="Write Employee Basic_Salary"
-										name="basic_salary">
+										name="basic_salary" value="${userList.basic_salary}">
 								</div>
 							
 							
@@ -201,3 +202,25 @@
 
 
 <jsp:include page="footer.jsp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

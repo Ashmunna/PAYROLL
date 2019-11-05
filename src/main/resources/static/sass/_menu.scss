@@ -18,7 +18,7 @@
 	.main-menu-item {
 		ul {
 			li .nav-link {
-				color: $white-color;
+				color: #212529 !important;
 				font-size: 15px;
 				padding: 36px 23px;
 				font-family: $font_stack_1;
@@ -151,7 +151,7 @@
 	}
 }
 
-.dropdown {
+.dropdown{
 	.dropdown-menu {
 		transition: all 0.5s;
 		overflow: hidden;
@@ -159,13 +159,13 @@
 		transform: scale(1, 0);
 		display: block;
 		border: 0px solid transparent;
-		background-color: $btn_bg;
+		background-color: black;
 
-		.dropdown-item {
+			.dropdown-item {
 			font-size: 14px;
 			padding: 8px 20px !important;
-			color: #fff !important;
-			background-color: $btn_bg;
+			color: white !important;
+			background-color: black;
 			text-transform: capitalize;
 		}
 

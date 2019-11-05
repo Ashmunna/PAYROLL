@@ -104,6 +104,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="/js/owl.carousel.min.js"></script>
     <script src="/js/jquery.nice-select.min.js"></script>
     <!-- slick js -->
+    <script src="/js/angular.min.js"></script>
+   	<script src="/js/app/app.js"></script>
+   	<script src="/js/controller/controller.js"></script>
     <script src="/js/slick.min.js"></script>
     <script src="/js/jquery.counterup.min.js"></script>
     <script src="/js/waypoints.min.js"></script>
@@ -114,9 +117,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="/js/mail-script.js"></script>
     <!-- custom js -->
     <script src="/js/custom.js"></script>
-   <script src="/js/angular.min.js"></script>
-   <script src="/js/app/app.js"></script>
-   <script src="/js/controller/controller.js"></script>
+   
 </body>
 
 </html>

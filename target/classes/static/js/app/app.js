@@ -1,1 +1,0 @@
-const employeeApp = angular.module('employeeApp', []);

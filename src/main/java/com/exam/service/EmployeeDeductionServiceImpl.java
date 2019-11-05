@@ -7,39 +7,40 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.exam.dao.EmployeeDao;
-import com.exam.model.Employee;
+import com.exam.dao.EmployeeDeductionDao;
+import com.exam.model.EmployeeDeduction;
 
 @Service
 @Transactional
-public class EmployeeServiceImpl implements EmployeeService {
+public class EmployeeDeductionServiceImpl implements EmployeeDeductionService {
+	
 	@Autowired
-	EmployeeDao employeeDao;
+	EmployeeDeductionDao employeeDeductionDao;
 
 	
 	
 
 
 	@Override
-	public Employee save(Employee employee) {
-		return employeeDao.save(employee);
+	public EmployeeDeduction save(EmployeeDeduction employeeDeduction) {
+		return employeeDeductionDao.save(employeeDeduction);
 	}
 
 
 
 	@Override
 	public boolean delete(long id) {
-		return employeeDao.delete(id);
+		return employeeDeductionDao.delete(id);
 	}
 
 	@Override
-	public Employee getById(long id) {
-		return employeeDao.getById(id);
+	public EmployeeDeduction getById(long id) {
+		return employeeDeductionDao.getById(id);
 	}
 
 	@Override
-	public List<Employee> getAll() {
-		return employeeDao.getAll();
+	public List<EmployeeDeduction> getAll() {
+		return employeeDeductionDao.getAll();
 	}
 
 	@Override
@@ -47,14 +48,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public Employee update(Employee entity) {
-		
-		return employeeDao.update(entity);
-	}
-
-
 
 	@Override
 	public Object update(Object entity) {

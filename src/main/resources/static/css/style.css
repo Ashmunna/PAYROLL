@@ -2329,15 +2329,15 @@ ul {
   transform: scale(1, 0);
   display: block;
   border: 0px solid transparent;
-  background-color: #ffcc00;
+  background-color: black;
 }
 
 /* line 164, /Applications/MAMP/htdocs/palash/cl/july 2019/189 travel/189 travel html/sass/_menu.scss */
 .dropdown .dropdown-menu .dropdown-item {
   font-size: 14px;
   padding: 8px 20px !important;
-  color: #fff !important;
-  background-color: #ffcc00;
+  color: white; !important;
+  background-color: black;
   text-transform: capitalize;
 }
 

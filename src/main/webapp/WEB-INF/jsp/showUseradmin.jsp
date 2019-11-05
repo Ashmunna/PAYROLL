@@ -38,29 +38,29 @@
 	<c:if test='${Boolean.parseBoolean(error)}'>
 		<div class="alert alert-danger">${message}</div>
 	</c:if>
-	<div class="container-fluid" style="overflow-x:auto;" >
-	<table class="table">
-		<thead>
+	<div class="container table-responsive-xl" style="overflow-x:auto;">
+	<table class="table table-hover" style="width:1600px">
+		<thead class="thead-dark text-center">
 			<tr>
-				<td>First Name</td>
-				<td>Surname</td>
-				<td>Date of Birth</td>
-				<td>Gender</td>
-				<td>Email</td>
-				<td>Contact Number</td>
-				<td>Address</td>
-				<td>Department</td>
-				<td>Designation</td>
-				<td>Status</td>
-				<td>Date of Hired</td>
-				<td>Basic Salary</td>
+				<th>First Name</th>
+				<th>Surname</th>
+				<th>Date of Birth</th>
+				<th>Gender</th>
+				<th>Email</th>
+				<th>Contact Number</th>
+				<th>Address</th>
+				<th>Department</th>
+				<th>Designation</th>
+				<th>Status</th>
+				<th>Date of Hired</th>
+				<th>Basic Salary</th>
 				<!--  <td>Username</td>
 				<td>Password</td> -->
 				
-				<td>Action</td>
+				<th colspan="2">Action</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody class="text-center">
 		<c:forEach var="user" items="${userList}">
 			<tr>
 				<td>${user.first_name}</td>
@@ -82,8 +82,13 @@
 				
 				
 				<td>
-					<a class="btn btn-success" href="/user/edit/${user.id}"><i class="fa fa-edit">Edit</i></a>
-					<a class="btn btn-danger"  href="/user/delete/${user.id}"><i class="fa fa-trash">Delete</i></a>
+					<a class="btn btn-success" href="/user/admin/edit/${user.id}"><i class="fa fa-edit">Edit</i></a>
+					
+				</td>
+				
+				<td>
+					
+					<a class="btn btn-danger float-right"  href="/user/admin/delete/${user.id}"><i class="fa fa-trash">Delete</i></a>
 				</td>
 			</tr>
 		</c:forEach>

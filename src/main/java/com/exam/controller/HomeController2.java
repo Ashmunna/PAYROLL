@@ -44,6 +44,11 @@ public class HomeController2 {
 		return new ModelAndView("employeeAllowance");
 	}
 	
+//	@GetMapping(value = "/employee_edit_admin")
+//	public ModelAndView employee_edit_admin() {
+//		return new ModelAndView("employee_edit_admin");
+//	}
+	
 	@GetMapping(value = "/employeeAllowanceDeduction")
 	public ModelAndView employeeAllowanceDeduction() {
 		return new ModelAndView("/employeeAllowanceDeduction");
