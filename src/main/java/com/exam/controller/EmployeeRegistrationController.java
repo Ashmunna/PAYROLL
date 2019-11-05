@@ -203,12 +203,9 @@ public class EmployeeRegistrationController {
     
     @GetMapping("/user/delete/{id}")
     public ModelAndView delete(@PathVariable long id) {
-        Map<String, Object> model = new HashMap<>();
-        
+       
         employeeService.delete(id);
-        List <Employee> entityList  =  employeeService.getAll();
-        model.put("userList", entityList);
-        return new ModelAndView("/showUser", model);
+        return new ModelAndView("redirect:/showUser");
     }
     
    

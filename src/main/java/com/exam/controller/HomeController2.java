@@ -94,6 +94,11 @@ public class HomeController2 {
 	}
 	
 	
+	@GetMapping(value = "/reportparameter")
+	public ModelAndView reportparameter() {
+		return new ModelAndView("reportparameter");
+	}
+	
 	
 	
 	
