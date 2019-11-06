@@ -12,6 +12,7 @@ public class EmployeeDeduction {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
 	private long id;
+	private long emp_id;
 	private String first_name;
 	private String surname;
 	private String email;
@@ -139,19 +140,26 @@ public class EmployeeDeduction {
 	public void setNetpay(double netpay) {
 		this.netpay = netpay;
 	}
+	
+
+	public long getEmp_id() {
+		return emp_id;
+	}
+
+	public void setEmp_id(long emp_id) {
+		this.emp_id = emp_id;
+	}
 
 	@Override
 	public String toString() {
-		return "EmployeeDeduction [id=" + id + ", first_name=" + first_name + ", surname=" + surname + ", email="
-				+ email + ", address=" + address + ", department=" + department + ", designation=" + designation
-				+ ", gross_salary=" + gross_salary + ", lifeinsurance=" + lifeinsurance + ", advance=" + advance
-				+ ", mealcharge=" + mealcharge + ", contribution_pf=" + contribution_pf + ", other=" + other
-				+ ", netpay=" + netpay + "]";
+		return "EmployeeDeduction [id=" + id + ", emp_id=" + emp_id + ", first_name=" + first_name + ", surname="
+				+ surname + ", email=" + email + ", address=" + address + ", department=" + department
+				+ ", designation=" + designation + ", gross_salary=" + gross_salary + ", lifeinsurance=" + lifeinsurance
+				+ ", advance=" + advance + ", mealcharge=" + mealcharge + ", contribution_pf=" + contribution_pf
+				+ ", other=" + other + ", netpay=" + netpay + "]";
 	}
 
 	
-	
 
-	
 
 }

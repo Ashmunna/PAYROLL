@@ -13,12 +13,12 @@
 
 
 
-<div class="card card-block d-flex" style="margin: 50px auto">
+<div class="card card-block d-flex" style="margin: 20px auto">
 	<div class="card-header text-center bg-info" style="color:yellow"><b>Jarvis Payroll Management System</b></div>
 	
 	<div class="card-body align-items-center d-flex justify-content-center"> <!--  -->
 
-		<div class="container login-container row justify-content-center bg-dark" style="margin: 150px auto; width: 900px">
+		<div class="container login-container row justify-content-center bg-dark" style="margin: 40px auto; width: 900px">
 			<div class="row" style="margin-left:150px; padding: 30px">
 
 				<div class="col-lg-12" style="color:yellow">

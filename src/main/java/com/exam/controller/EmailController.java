@@ -32,7 +32,7 @@ public class EmailController {
         message.setText(body);       
         javaMailSender.send(message);
         System.out.println("Email........................ "+email+" "+subject+" "+body+"massage===========" +message);
-        map.put("msg", "Sending Feedback Successfullly");
+        map.put("message", "Sending Feedback Successfullly");
         return new ModelAndView("email", map);
     }
 	@GetMapping("/email/{id}")

@@ -38,13 +38,18 @@
 		<div class="alert alert-danger">${message}</div>
 	</c:if>
 	
+		<form action="/showSalary/{id}" method="POST">
+			
+			<div class="form-group">
+				<label>Search Employee</label> <input type="search" name="search"
+					class="form-control" placeholder="Search Employee By Id"
+					required=""><br>
+				<button type="submit" class="btn btn-success "> Search </button>
+			</div>
+		
+		
+		</form>
 	
-	<div class="form-group">
-			<label>Search Employee</label> <input type="search" name="search"
-				class="form-control" placeholder="Search Employee By Id"
-				required=""><br>
-			<button type="submit" class="btn btn-success "> Search </button>
-	</div>
 	<br>
 	<div class="container-fluid" style="overflow-x:auto;" >
 	<table class="table">
@@ -52,8 +57,6 @@
 			<tr>
 				<td>First Name</td>
 				<td>Surname</td>
-				<td>Date of Birth</td>
-				<td>Gender</td>
 				<td>Email</td>
 				<td>Contact Number</td>
 				<td>Address</td>
@@ -62,6 +65,10 @@
 				<td>Status</td>
 				<td>Date of Hired</td>
 				<td>Basic Salary</td>
+				<td>Houserent</td>
+				<td>Netpay</td>
+			
+				
 				<!-- <td>Username</td>
 				<td>Password</td> -->
 				
@@ -69,22 +76,22 @@
 			</tr>
 		</thead>
 		<tbody>
-		<c:forEach var="user" items="${userList}">
+		<%-- <c:forEach var="user" items="${userList}"> --%>
 			<tr>
-				<td>${user.first_name}</td>
-				<td>${user.surname}</td>
-				<td>${user.dob}</td>
-				<td>${user.gender}</td>
-				<td>${user.email}</td>
-				<td>${user.contact_no}</td>
-				<td>${user.address}</td>
-				<td>${user.department}</td>
-				<td>${user.designation}</td>
-				<td>${user.status}</td>
-				<td>${user.doh}</td>
-				<td>${user.basic_salary}</td>
-				<!-- <td>${user.username}</td>
-				<td>${user.password}</td> -->
+				<td>${userList.first_name}</td>
+				<td>${userList.surname}</td>
+				<td>${userList.email}</td>
+				<td>${userList.contact_no}</td>
+				<td>${userList.address}</td>
+				<td>${userList.department}</td>
+				<td>${userList.designation}</td>
+				<td>${userList.status}</td>
+				<td>${userList.doh}</td>
+				<td>${userList.basic_salary}</td>
+				<td>${allowanceList.houserent}</td>
+				<td>${deductionList.netpay}</td>
+				
+				
 				
 				
 				<td>
@@ -92,7 +99,7 @@
 					<a class="btn btn-danger" href="/user/delete/${user.id}"><i class="fa fa-trash"></i></a>
 				</td>
 			</tr>
-		</c:forEach>
+<%-- 		</c:forEach> --%>
 		</tbody>
 	</table>
 	

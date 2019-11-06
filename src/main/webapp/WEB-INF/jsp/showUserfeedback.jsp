@@ -39,7 +39,7 @@
 		<div class="alert alert-danger">${message}</div>
 	</c:if>
 	<div class="container table-responsive-xl" style="overflow-x:auto;">
-	<table class="table table-hover" style="width:1600px">
+	<table class="table table-hover" style="width:900px">
 		<thead class="thead-dark text-center">
 			<tr>
 				<th>Name</th>

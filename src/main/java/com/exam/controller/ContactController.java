@@ -58,11 +58,11 @@ public class ContactController {
         
         if (contact != null) {
             model.put("success", true);
-            model.put("message", "Save Successfully");
+            model.put("message", "Send Your Message Successfully");
             return new ModelAndView("contact", model);
         }else {
             model.put("error", false);
-            model.put("message", "Save failed");
+            model.put("message", "Send failed");
             return new ModelAndView("contact", model);
         }
     }

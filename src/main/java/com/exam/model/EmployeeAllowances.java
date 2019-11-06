@@ -12,6 +12,7 @@ public class EmployeeAllowances {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
 	private long id;
+	private long emp_id;
 	private String first_name;
 	private String surname;
 	private String email;
@@ -140,13 +141,25 @@ public class EmployeeAllowances {
 		this.basic_salary = basic_salary;
 	}
 
+	
+	public long getEmp_id() {
+		return emp_id;
+	}
+
+	public void setEmp_id(long emp_id) {
+		this.emp_id = emp_id;
+	}
+
 	@Override
 	public String toString() {
-		return "EmployeeAllowances [id=" + id + ", first_name=" + first_name + ", surname=" + surname + ", email="
-				+ email + ", address=" + address + ", department=" + department + ", designation=" + designation
-				+ ", basic_salary=" + basic_salary + ", overtime_amount=" + overtime_amount + ", houserent=" + houserent
-				+ ", ma=" + ma + ", tfa=" + tfa + ", oa=" + oa + ", ts=" + ts + "]";
+		return "EmployeeAllowances [id=" + id + ", emp_id=" + emp_id + ", first_name=" + first_name + ", surname="
+				+ surname + ", email=" + email + ", address=" + address + ", department=" + department
+				+ ", designation=" + designation + ", basic_salary=" + basic_salary + ", overtime_amount="
+				+ overtime_amount + ", houserent=" + houserent + ", ma=" + ma + ", tfa=" + tfa + ", oa=" + oa + ", ts="
+				+ ts + "]";
 	}
+
+	
 
 	
 

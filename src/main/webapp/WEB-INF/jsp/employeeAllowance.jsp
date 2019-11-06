@@ -250,6 +250,10 @@
 					<div class="col-lg-6" style="width: 300px; color:yellow; padding:20px">
 
 
+						<input type="text" name="emp_id" class="form-control"
+							placeholder="Write Employee First Name" required=""
+							value="${userList.id}" hidden="true">
+
 						<input type="text" name="fName" class="form-control"
 							placeholder="Write Employee First Name" required=""
 							value="${userList.first_name}" hidden="true">

@@ -254,6 +254,7 @@ public ModelAndView saveSalary(HttpServletRequest request) {
 	
 	Map<String, Object> model = new HashMap<>();
 	
+	String emp_id = request.getParameter("emp_id");
 	String fName = request.getParameter("fName");
    String sName = request.getParameter("sName");
    String email = request.getParameter("email");
@@ -271,6 +272,8 @@ public ModelAndView saveSalary(HttpServletRequest request) {
    
    EmployeeAllowances employeeallowances = new EmployeeAllowances();
    
+   
+   employeeallowances.setEmp_id(Long.parseLong(emp_id));
    employeeallowances.setFirst_name(fName);
    employeeallowances.setSurname(sName);
    employeeallowances.setEmail(email);
@@ -489,6 +492,7 @@ public ModelAndView saveNetSalary(HttpServletRequest request) {
 	
 	Map<String, Object> model = new HashMap<>();
 	
+	String emp_id = request.getParameter("emp_id");
 	String fName = request.getParameter("fName");
    String sName = request.getParameter("sName");
    String email = request.getParameter("email");
@@ -506,6 +510,7 @@ public ModelAndView saveNetSalary(HttpServletRequest request) {
    
    EmployeeDeduction employeeDeduction = new EmployeeDeduction();
    
+   employeeDeduction.setEmp_id(Long.parseLong(emp_id));
    employeeDeduction.setFirst_name(fName);
    employeeDeduction.setSurname(sName);
    employeeDeduction.setEmail(email);
@@ -603,7 +608,19 @@ public String withParameter(HttpServletRequest request, HttpServletResponse resp
 	return null;
 }
 
-
+@PostMapping("/showSalary/{id}")
+public ModelAndView getEmpSalaryById(HttpServletRequest request) {
+    Map<String, Object> model = new HashMap<>();
+    String search = request.getParameter("search");
+    long id=Long.parseLong(search);
+    Employee userList  =  employeeService.getById(id);
+    EmployeeAllowances allowanceList  =  employeeAllowancesService.getById(id);
+    EmployeeDeduction deductionList  =  employeeDeductionService.getById(id);
+    model.put("userList", userList);
+    model.put("allowanceList", allowanceList);
+    model.put("deductionList", deductionList);
+    return new ModelAndView("/employeeSalarySheet", model);
+}
 
 
 

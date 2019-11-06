@@ -11,8 +11,15 @@
 	
 	<div class="card-body align-items-center d-flex justify-content-center"> <!--  -->
 
-		<div class="container login-container row justify-content-center bg-dark" style="margin: 150px auto; width: 750px">
+		<div class="container login-container row justify-content-center bg-dark" style="margin: 90px auto; width: 750px">
+			
+			<div class="text-center px-lg-5" style="padding: 20px">
+					<h3 style="color: yellow;">${message}</h3>
+	
+			</div>
+			
 			<div class="row" style="margin-left:150px; padding: 30px">
+			
 
 				<div class="col-lg-12" >
 					<h3 style="color:yellow">Replying User Feedback</h3>
