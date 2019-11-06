@@ -71,8 +71,8 @@
                                        Salary Management
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="/employeeAllowance"> Employee Allowance</a>
-                                        <a class="dropdown-item" href="/employeeAllowanceDeduction"> Employee Allowance Deduction</a>
+                                        <a class="dropdown-item" href="/employeeAllowance"> Salary Allowance</a>
+                                        <a class="dropdown-item" href="/employeeAllowanceDeduction"> Salary Deduction</a>
                                         <a class="dropdown-item" href="single-blog.html"> Employee Salary Update</a>
                                     </div>
                                 </li>

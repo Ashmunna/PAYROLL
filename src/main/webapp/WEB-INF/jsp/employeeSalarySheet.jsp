@@ -38,44 +38,60 @@
 		<div class="alert alert-danger">${message}</div>
 	</c:if>
 	
+	<div class="container" >
+	
 		<form action="/showSalary/{id}" method="POST">
 			
-			<div class="form-group">
-				<label>Search Employee</label> <input type="search" name="search"
-					class="form-control" placeholder="Search Employee By Id"
-					required=""><br>
-				<button type="submit" class="btn btn-success "> Search </button>
+			<div class="row">
+				<div class="col-lg-12">
+						<div class="form-group" style="width: 300px">
+							<label><strong>Search Employee</strong></label> <input type="search" name="search"
+								class="form-control text-center" placeholder="Search Employee By Id"
+								required="true"><br>
+							<button type="submit" class="btn btn-success "> Search </button>
+						</div>
+				</div>
 			</div>
 		
-		
 		</form>
+		
+	</div>
+
 	
-	<br>
-	<div class="container-fluid" style="overflow-x:auto;" >
-	<table class="table">
-		<thead>
+	<div class="container table-responsive-xl" style="overflow-x:auto;">
+	<table class="table table-hover" style="width:1900px">
+		<thead class="thead-dark text-center">
 			<tr>
-				<td>First Name</td>
-				<td>Surname</td>
-				<td>Email</td>
-				<td>Contact Number</td>
-				<td>Address</td>
-				<td>Department</td>
-				<td>Designation</td>
-				<td>Status</td>
-				<td>Date of Hired</td>
-				<td>Basic Salary</td>
-				<td>Houserent</td>
-				<td>Netpay</td>
+				<th>First Name</th>
+				<th>Surname</th>
+				<th>Email</th>
+				<th>Contact Number</th>
+				<th>Address</th>
+				<th>Department</th>
+				<th>Designation</th>
+				<th>Status</th>
+				<th>Date of Hired</th>
+				<th>Basic Salary</th>
+				<th>Overtime</th>
+				<th>Houserent</th>
+				<th>Medical Allowances</th>
+				<th>Transport Allowances</th>
+				<th>Other Allowances</th>
+				<th>Gross Salary</th>
+				<th>Life Insurance Deduction</th>
+				<th>Advance Deduction</th>
+				<th>Tax Deduction</th>
+				<th>Contribution in P.F</th>
+				<th>Other Deduction</th>
+				<th>Netpay</th>
 			
 				
 				<!-- <td>Username</td>
-				<td>Password</td> -->
-				
-				<td>Action</td>
+				<td>Password</td> 
+				<td>Action</td>-->
 			</tr>
 		</thead>
-		<tbody>
+		<tbody class="text-center">
 		<%-- <c:forEach var="user" items="${userList}"> --%>
 			<tr>
 				<td>${userList.first_name}</td>
@@ -88,31 +104,37 @@
 				<td>${userList.status}</td>
 				<td>${userList.doh}</td>
 				<td>${userList.basic_salary}</td>
+				<td>${allowanceList.overtime_amount}</td>
 				<td>${allowanceList.houserent}</td>
+				<td>${allowanceList.ma}</td>
+				<td>${allowanceList.tfa}</td>
+				<td>${allowanceList.oa}</td>
+				<td>${deductionList.gross_salary}</td>
+				<td>${deductionList.lifeinsurance}</td>
+				<td>${deductionList.advance}</td>
+				<td>${deductionList.mealcharge}</td>
+				<td>${deductionList.contribution_pf}</td>
+				<td>${deductionList.other}</td>
 				<td>${deductionList.netpay}</td>
-				
-				
-				
-				
-				<td>
+
+				<%-- <td>
 					<a class="btn btn-success" href="/user/edit/${user.id}"><i class="fa fa-edit"></i></a>
 					<a class="btn btn-danger" href="/user/delete/${user.id}"><i class="fa fa-trash"></i></a>
-				</td>
+				</td> --%>
 			</tr>
 <%-- 		</c:forEach> --%>
 		</tbody>
 	</table>
 	
-
 	</div>
 	
-	<div>
+<!-- 	<div>
 	
 		<button type="submit" class="btn btn-success  mt-sm-5  px-4">Generate Slip</button>
 		<button type="submit" class="btn btn-success  mt-sm-5  px-4">PDF File</button>
 		<button type="submit" class="btn btn-success  mt-sm-5  px-4">Save</button>
 		
-	</div>
+	</div> -->
 
 </div>
 

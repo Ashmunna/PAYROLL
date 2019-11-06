@@ -97,7 +97,7 @@
 						<div class="form-group">
 							<label>Employee Id</label> <input type="number" name="id"
 								class="form-control" placeholder="" required=""
-								value="${userList.id}">
+								value="${userList.emp_id}">
 						</div>
 
 						<div class="form-group">
@@ -252,7 +252,7 @@
 						
 						<input type="text" name="emp_id" class="form-control"
 							placeholder="Write Employee First Name" required=""
-							value="${userList.id}" hidden="true">
+							value="${userList.emp_id}" hidden="true">
 
 						<input type="text" name="fName" class="form-control"
 							placeholder="Write Employee First Name" required=""

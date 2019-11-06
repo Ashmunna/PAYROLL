@@ -110,6 +110,7 @@
 									<label>Role</label> <select class="form-control" name="role">
 
 										<option value="user">User</option>
+										<option value="admin">Admin</option>
 
 									</select>
 								</div>
