@@ -199,7 +199,7 @@
 
 							<label>Other Deduction</label> <input
 								type="number" class="form-control"
-								placeholder="Transport Allowance in %"
+								placeholder="Other Deduction"
 								name="other">
 						</div>
 

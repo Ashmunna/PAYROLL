@@ -87,6 +87,12 @@ public class HomeController2 {
 		return new ModelAndView("employeeSalarySheet");
 	}
 	
+	@GetMapping(value = "/employeeSalarySheetUser")
+	public ModelAndView employeeSalarySheetUser() {
+		return new ModelAndView("employeeSalarySheetUser");
+	}
+
+	
 	
 	@GetMapping(value = "/totalAllowanceReport")
 	public ModelAndView totalAllowanceReport() {

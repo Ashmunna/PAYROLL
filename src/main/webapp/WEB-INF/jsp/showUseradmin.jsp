@@ -42,6 +42,7 @@
 	<table class="table table-hover" style="width:1600px">
 		<thead class="thead-dark text-center">
 			<tr>
+				<th>Employee Id</th>
 				<th>First Name</th>
 				<th>Surname</th>
 				<th>Date of Birth</th>
@@ -63,6 +64,7 @@
 		<tbody class="text-center">
 		<c:forEach var="user" items="${userList}">
 			<tr>
+				<td>${user.id}</td>
 				<td>${user.first_name}</td>
 				<td>${user.surname}</td>
 				<td>${user.dob}</td>

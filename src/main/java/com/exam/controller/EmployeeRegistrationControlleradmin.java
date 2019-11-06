@@ -107,7 +107,7 @@ public class EmployeeRegistrationControlleradmin {
         
         if (employee != null) {
             model.put("success", true);
-            model.put("message", "Save Successful");
+            model.put("message", "Save Successfully");
             return new ModelAndView("employee_registration_admin", model);
         }else {
             model.put("error", false);
@@ -365,16 +365,16 @@ public ModelAndView userUpdateadmin(HttpServletRequest request) {
     System.out.println(employee);
     if (employee != null) {
         model.put("success", true);
-        model.put("message", "Update Successful");
+        model.put("message", "Update Successfully");
         List <Employee> entityList  =  employeeService.getAll();
         model.put("userList", entityList);
-        return new ModelAndView("/showUseradmin", model);
+        return new ModelAndView("showUseradmin", model);
     }else {
         model.put("error", false);
         model.put("message", "Save failed");
         List <Employee> entityList  =  employeeService.getAll();
         model.put("userList", entityList);
-        return new ModelAndView("/showUseradmin", model);
+        return new ModelAndView("showUseradmin", model);
     }
 }
 
@@ -386,7 +386,7 @@ public ModelAndView delete(@PathVariable long id) {
     employeeService.delete(id);
     List <Employee> entityList  =  employeeService.getAll();
     model.put("userList", entityList);
-    return new ModelAndView("/showUseradmin", model);
+    return new ModelAndView("redirect:/showUseradmin", model);
 }
 
 @PostMapping("/caculatededuction")
@@ -539,6 +539,24 @@ public ModelAndView saveNetSalary(HttpServletRequest request) {
 	   }
 	}
 
+@PostMapping("/showSalary/{id}")
+public ModelAndView getEmpSalaryById(HttpServletRequest request) {
+    Map<String, Object> model = new HashMap<>();
+    String search = request.getParameter("search");
+    long id=Long.parseLong(search);
+    Employee userList  =  employeeService.getById(id);
+    EmployeeAllowances allowanceList  =  employeeAllowancesService.getById(id);
+    EmployeeDeduction deductionList  =  employeeDeductionService.getById(id);
+    model.put("userList", userList);
+    model.put("allowanceList", allowanceList);
+    model.put("deductionList", deductionList);
+    return new ModelAndView("/employeeSalarySheet", model);
+}
+
+
+
+
+/*REPORT START*/
 
 @GetMapping("/pdf")
 public String pdf(HttpServletResponse response) {
@@ -546,7 +564,7 @@ public String pdf(HttpServletResponse response) {
 	try {
 		SimpleReportExporter simpleExporter = new SimpleReportExporter();
 
-		simpleReportFiller.setReportFileName("employeeallowance1.jrxml");
+		simpleReportFiller.setReportFileName("empdetails.jrxml");
 		simpleReportFiller.compileReport();
 
 		Map<String, Object> parameters = new HashMap<>();
@@ -555,12 +573,12 @@ public String pdf(HttpServletResponse response) {
 		simpleReportFiller.fillReport();
 		simpleExporter.setJasperPrint(simpleReportFiller.getJasperPrint());
 
-		simpleExporter.exportToPdf("employeeallowance1.pdf", "olonsoft");
+		simpleExporter.exportToPdf("empdetails.pdf", "olonsoft");
 
-		File file = new File("src/main/resources/reports/employeeallowance1.pdf");
+		File file = new File("src/main/resources/reports/empdetails.pdf");
 		response.setHeader("Content-Type", servletContext.getMimeType(file.getName()));
 		response.setHeader("Content-Length", String.valueOf(file.length()));
-		response.setHeader("Content-Disposition", "inline; filename=\"employeeallowance1.pdf\"");
+		response.setHeader("Content-Disposition", "inline; filename=\"empdetails.pdf\"");
 		Files.copy(file.toPath(), response.getOutputStream());
 	} catch (FileNotFoundException e) {
 		// TODO Auto-generated catch block
@@ -571,6 +589,79 @@ public String pdf(HttpServletResponse response) {
 	}
 	return null;
 }
+
+
+@GetMapping("/emp_ta_report")
+public String emp_ta_report(HttpServletResponse response) {
+	response.setContentType("application/pdf");
+	try {
+		SimpleReportExporter simpleExporter = new SimpleReportExporter();
+
+		simpleReportFiller.setReportFileName("emp_ta_report.jrxml");
+		simpleReportFiller.compileReport();
+
+		Map<String, Object> parameters = new HashMap<>();
+
+		simpleReportFiller.setParameters(parameters);
+		simpleReportFiller.fillReport();
+		simpleExporter.setJasperPrint(simpleReportFiller.getJasperPrint());
+
+		simpleExporter.exportToPdf("emp_ta_report.pdf", "olonsoft");
+
+		File file = new File("src/main/resources/reports/emp_ta_report.pdf");
+		response.setHeader("Content-Type", servletContext.getMimeType(file.getName()));
+		response.setHeader("Content-Length", String.valueOf(file.length()));
+		response.setHeader("Content-Disposition", "inline; filename=\"emp_ta_report.pdf\"");
+		Files.copy(file.toPath(), response.getOutputStream());
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return null;
+}
+
+
+
+@GetMapping("/emp_td_report")
+public String emp_td_report(HttpServletResponse response) {
+	response.setContentType("application/pdf");
+	try {
+		SimpleReportExporter simpleExporter = new SimpleReportExporter();
+
+		simpleReportFiller.setReportFileName("emp_td_report.jrxml");
+		simpleReportFiller.compileReport();
+
+		Map<String, Object> parameters = new HashMap<>();
+
+		simpleReportFiller.setParameters(parameters);
+		simpleReportFiller.fillReport();
+		simpleExporter.setJasperPrint(simpleReportFiller.getJasperPrint());
+
+		simpleExporter.exportToPdf("emp_td_report.pdf", "olonsoft");
+
+		File file = new File("src/main/resources/reports/emp_td_report.pdf");
+		response.setHeader("Content-Type", servletContext.getMimeType(file.getName()));
+		response.setHeader("Content-Length", String.valueOf(file.length()));
+		response.setHeader("Content-Disposition", "inline; filename=\"emp_td_report.pdf\"");
+		Files.copy(file.toPath(), response.getOutputStream());
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return null;
+}
+
+
+
+
+
+
 
 
 @PostMapping("/pdfbyusername")
@@ -608,19 +699,6 @@ public String withParameter(HttpServletRequest request, HttpServletResponse resp
 	return null;
 }
 
-@PostMapping("/showSalary/{id}")
-public ModelAndView getEmpSalaryById(HttpServletRequest request) {
-    Map<String, Object> model = new HashMap<>();
-    String search = request.getParameter("search");
-    long id=Long.parseLong(search);
-    Employee userList  =  employeeService.getById(id);
-    EmployeeAllowances allowanceList  =  employeeAllowancesService.getById(id);
-    EmployeeDeduction deductionList  =  employeeDeductionService.getById(id);
-    model.put("userList", userList);
-    model.put("allowanceList", allowanceList);
-    model.put("deductionList", deductionList);
-    return new ModelAndView("/employeeSalarySheet", model);
-}
 
 
 

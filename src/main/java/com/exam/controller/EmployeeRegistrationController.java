@@ -21,6 +21,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.exam.model.Employee;
+import com.exam.model.EmployeeAllowances;
+import com.exam.model.EmployeeDeduction;
+import com.exam.service.EmployeeAllowancesService;
+import com.exam.service.EmployeeDeductionService;
 import com.exam.service.EmployeeService;
 
 
@@ -39,6 +43,12 @@ public class EmployeeRegistrationController {
 	
 	@Autowired
     EmployeeService employeeService;
+	
+	@Autowired
+	EmployeeAllowancesService employeeAllowancesService;
+	
+	@Autowired
+	EmployeeDeductionService employeeDeductionService;
     
 //    @Autowired
 //    PasswordEncoder passwordEncoder;
@@ -95,7 +105,7 @@ public class EmployeeRegistrationController {
         
         if (employee != null) {
             model.put("success", true);
-            model.put("message", "Save Successful");
+            model.put("message", "Save Successfully");
             return new ModelAndView("employee_registration", model);
         }else {
             model.put("error", false);
@@ -191,13 +201,13 @@ public class EmployeeRegistrationController {
             model.put("message", "Update Successfully");
             List <Employee> entityList  =  employeeService.getAll();
             model.put("userList", entityList);
-            return new ModelAndView("/showUser", model);
+            return new ModelAndView("showUser", model);
         }else {
             model.put("error", false);
             model.put("message", "Save failed");
             List <Employee> entityList  =  employeeService.getAll();
             model.put("userList", entityList);
-            return new ModelAndView("/showUser", model);
+            return new ModelAndView("showUser", model);
         }
     }
     
@@ -209,6 +219,19 @@ public class EmployeeRegistrationController {
     }
     
    
+    @PostMapping("/showUserSalary/{id}")
+    public ModelAndView getEmpUserSalaryById(HttpServletRequest request) {
+        Map<String, Object> model = new HashMap<>();
+        String search = request.getParameter("search");
+        long id=Long.parseLong(search);
+        Employee userList  =  employeeService.getById(id);
+        EmployeeAllowances allowanceList  =  employeeAllowancesService.getById(id);
+        EmployeeDeduction deductionList  =  employeeDeductionService.getById(id);
+        model.put("userList", userList);
+        model.put("allowanceList", allowanceList);
+        model.put("deductionList", deductionList);
+        return new ModelAndView("/employeeSalarySheetUser", model);
+    }
     
     
 

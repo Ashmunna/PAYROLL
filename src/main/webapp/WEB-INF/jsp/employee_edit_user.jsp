@@ -90,9 +90,9 @@
 							<div class="form-check form-check-inline">
 					
 								<label class="radio-inline"> <input type="radio"
-									name="gender" value="${userList.gender}">Male
+									name="gender" value="Male">Male
 								</label> <label class="radio-inline"><input type="radio"
-									name="gender" value="${userList.gender}">Female</label>
+									name="gender" value="Female">Female</label>
 					
 							</div>
 					
