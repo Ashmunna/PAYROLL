@@ -84,6 +84,7 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="/employeeSalarySheet"> Employee Salary Sheet</a>
+                                        <a class="dropdown-item" href="/salarysheet"> Employee Salary Sheet Report</a>
                                         <a class="dropdown-item" href="/pdf"> Employee Details Reports</a>
                                         <a class="dropdown-item" href="/emp_ta_report"> Employee Total Allowance Reports</a>
                                         <a class="dropdown-item" href="/emp_td_report"> Employee Total Deduction Reports</a>

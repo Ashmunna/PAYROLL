@@ -657,7 +657,37 @@ public String emp_td_report(HttpServletResponse response) {
 	return null;
 }
 
+@GetMapping("/salarysheet")
+public String salarysheet(HttpServletResponse response) {
+	response.setContentType("application/pdf");
+	try {
+		SimpleReportExporter simpleExporter = new SimpleReportExporter();
 
+		simpleReportFiller.setReportFileName("salarysheet.jrxml");
+		simpleReportFiller.compileReport();
+
+		Map<String, Object> parameters = new HashMap<>();
+
+		simpleReportFiller.setParameters(parameters);
+		simpleReportFiller.fillReport();
+		simpleExporter.setJasperPrint(simpleReportFiller.getJasperPrint());
+
+		simpleExporter.exportToPdf("salarysheet.pdf", "olonsoft");
+
+		File file = new File("src/main/resources/reports/salarysheet.pdf");
+		response.setHeader("Content-Type", servletContext.getMimeType(file.getName()));
+		response.setHeader("Content-Length", String.valueOf(file.length()));
+		response.setHeader("Content-Disposition", "inline; filename=\"salarysheet.pdf\"");
+		Files.copy(file.toPath(), response.getOutputStream());
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return null;
+}
 
 
 
@@ -698,6 +728,173 @@ public String withParameter(HttpServletRequest request, HttpServletResponse resp
 	}
 	return null;
 }
+
+
+@PostMapping("/salarysheetbyid")
+public String salarysheetbyid(HttpServletRequest request, HttpServletResponse response) {
+	response.setContentType("application/pdf");
+	String id = request.getParameter("id");
+	Long uid = Long.parseLong(id);
+	
+	
+	
+	
+	try {
+		SimpleReportExporter simpleExporter = new SimpleReportExporter();
+
+		simpleReportFiller.setReportFileName("userSalarySheet.jrxml");
+		simpleReportFiller.compileReport();
+
+		Map<String, Object> parameters = new HashMap<>();
+		
+		parameters.put("UserId", uid);
+		simpleReportFiller.setParameters(parameters);
+		simpleReportFiller.fillReport();
+		simpleExporter.setJasperPrint(simpleReportFiller.getJasperPrint());
+
+		simpleExporter.exportToPdf("userSalarySheet.pdf", "olonsoft");
+
+		File file = new File("src/main/resources/reports/userSalarySheet.pdf");
+		response.setHeader("Content-Type", servletContext.getMimeType(file.getName()));
+		response.setHeader("Content-Length", String.valueOf(file.length()));
+		response.setHeader("Content-Disposition", "inline; filename=\"userSalarySheet.pdf\"");
+		Files.copy(file.toPath(), response.getOutputStream());
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return null;
+}
+
+
+@PostMapping("/employeedetailsbyid")
+public String employeedetailsbyid(HttpServletRequest request, HttpServletResponse response) {
+	response.setContentType("application/pdf");
+	String id = request.getParameter("id");
+	Long uid = Long.parseLong(id);
+	
+	
+	
+	
+	try {
+		SimpleReportExporter simpleExporter = new SimpleReportExporter();
+
+		simpleReportFiller.setReportFileName("EmployeeDetailsById.jsp.jrxml");
+		simpleReportFiller.compileReport();
+
+		Map<String, Object> parameters = new HashMap<>();
+		
+		parameters.put("userId", uid);
+		simpleReportFiller.setParameters(parameters);
+		simpleReportFiller.fillReport();
+		simpleExporter.setJasperPrint(simpleReportFiller.getJasperPrint());
+
+		simpleExporter.exportToPdf("EmployeeDetailsById.jsp.pdf", "olonsoft");
+
+		File file = new File("src/main/resources/reports/EmployeeDetailsById.jsp.pdf");
+		response.setHeader("Content-Type", servletContext.getMimeType(file.getName()));
+		response.setHeader("Content-Length", String.valueOf(file.length()));
+		response.setHeader("Content-Disposition", "inline; filename=\"EmployeeDetailsById.jsp.pdf\"");
+		Files.copy(file.toPath(), response.getOutputStream());
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return null;
+}
+
+
+
+@PostMapping("/employee_ta_byid")
+public String employee_ta_byid(HttpServletRequest request, HttpServletResponse response) {
+	response.setContentType("application/pdf");
+	String id = request.getParameter("id");
+	Long uid = Long.parseLong(id);
+	
+	
+	
+	
+	try {
+		SimpleReportExporter simpleExporter = new SimpleReportExporter();
+
+		simpleReportFiller.setReportFileName("Employee_ta_ById.jrxml");
+		simpleReportFiller.compileReport();
+
+		Map<String, Object> parameters = new HashMap<>();
+		
+		parameters.put("userId", uid);
+		simpleReportFiller.setParameters(parameters);
+		simpleReportFiller.fillReport();
+		simpleExporter.setJasperPrint(simpleReportFiller.getJasperPrint());
+
+		simpleExporter.exportToPdf("Employee_ta_ById.pdf", "olonsoft");
+
+		File file = new File("src/main/resources/reports/Employee_ta_ById.pdf");
+		response.setHeader("Content-Type", servletContext.getMimeType(file.getName()));
+		response.setHeader("Content-Length", String.valueOf(file.length()));
+		response.setHeader("Content-Disposition", "inline; filename=\"Employee_ta_ById.pdf\"");
+		Files.copy(file.toPath(), response.getOutputStream());
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return null;
+}
+
+
+
+@PostMapping("/employee_td_byid")
+public String employee_td_byid(HttpServletRequest request, HttpServletResponse response) {
+	response.setContentType("application/pdf");
+	String id = request.getParameter("id");
+	Long uid = Long.parseLong(id);
+	
+	
+	
+	
+	try {
+		SimpleReportExporter simpleExporter = new SimpleReportExporter();
+
+		simpleReportFiller.setReportFileName("Employee_td_ById.jrxml");
+		simpleReportFiller.compileReport();
+
+		Map<String, Object> parameters = new HashMap<>();
+		
+		parameters.put("userId", uid);
+		simpleReportFiller.setParameters(parameters);
+		simpleReportFiller.fillReport();
+		simpleExporter.setJasperPrint(simpleReportFiller.getJasperPrint());
+
+		simpleExporter.exportToPdf("Employee_td_ById.pdf", "olonsoft");
+
+		File file = new File("src/main/resources/reports/Employee_td_ById.pdf");
+		response.setHeader("Content-Type", servletContext.getMimeType(file.getName()));
+		response.setHeader("Content-Length", String.valueOf(file.length()));
+		response.setHeader("Content-Disposition", "inline; filename=\"Employee_td_ById.pdf\"");
+		Files.copy(file.toPath(), response.getOutputStream());
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return null;
+}
+
+
+
+
+
 
 
 

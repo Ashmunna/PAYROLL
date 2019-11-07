@@ -71,9 +71,10 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     	<a class="dropdown-item" href="/employeeSalarySheetUser"> Employee Salary Sheet</a>
-                                        <a class="dropdown-item" href="/pdf"> Employee Details Reports</a>
-                                        <a class="dropdown-item" href="/emp_ta_report"> Employee Total Allowance Reports</a>
-                                        <a class="dropdown-item" href="/emp_td_report"> Employee Total Deduction Reports</a>
+                                    	<a class="dropdown-item" href="/salarySheetById">Individual Employee Salary Sheet Report</a>
+                                        <a class="dropdown-item" href="/EmployeeDetailsById">Individual Employee Details Report</a>
+                                        <a class="dropdown-item" href="/Employee_ta_ById"> Individual Employee Allowance Report</a>
+                                        <a class="dropdown-item" href="/Employee_td_ById"> Individual Employee Deduction Report</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">

@@ -91,8 +91,30 @@ public class HomeController2 {
 	public ModelAndView employeeSalarySheetUser() {
 		return new ModelAndView("employeeSalarySheetUser");
 	}
-
 	
+	
+	@GetMapping(value = "/salarySheetById")
+	public ModelAndView salarySheetById() {
+		return new ModelAndView("salarySheetById");
+	}
+	
+	@GetMapping(value = "/EmployeeDetailsById")
+	public ModelAndView EmployeeDetailsById() {
+		return new ModelAndView("EmployeeDetailsById");
+	}
+	
+	@GetMapping(value = "/Employee_ta_ById")
+	public ModelAndView Employee_ta_ById() {
+		return new ModelAndView("Employee_ta_ById");
+	}
+	
+	@GetMapping(value = "/Employee_td_ById")
+	public ModelAndView Employee_td_ById() {
+		return new ModelAndView("Employee_td_ById");
+	}
+
+
+
 	
 	@GetMapping(value = "/totalAllowanceReport")
 	public ModelAndView totalAllowanceReport() {
